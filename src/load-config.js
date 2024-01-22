@@ -105,6 +105,7 @@ const finalConfig = {
     : config.trustedProxies,
   port: +process.env.ACTUAL_PORT || +process.env.PORT || config.port,
   hostname: process.env.ACTUAL_HOSTNAME || config.hostname,
+  dataDir: process.env.ACTUAL_DATA_DIR || config.dataDir,
   serverFiles: process.env.ACTUAL_SERVER_FILES || config.serverFiles,
   userFiles: process.env.ACTUAL_USER_FILES || config.userFiles,
   webRoot: process.env.ACTUAL_WEB_ROOT || config.webRoot,
