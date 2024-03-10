@@ -14,7 +14,6 @@ import {
 import * as nordigenNode from 'nordigen-node';
 import * as uuid from 'uuid';
 import jwt from 'jws';
-import { SecretName, secretsService } from '../../services/secrets-service.js';
 
 const GoCardlessClient = nordigenNode.default;
 
@@ -22,8 +21,8 @@ const clients = new Map();
 
 const getGocardlessClient = () => {
   const secrets = {
-    secretId: secretsService.get(SecretName.gocardless_secretId),
-    secretKey: secretsService.get(SecretName.gocardless_secretKey),
+    secretId: process.env.ACTUAL_GOCARDLESS_SECRET_ID,
+    secretKey: process.env.ACTUAL_GOCARDLESS_SECRET_KEY,
   };
 
   const hash = JSON.stringify(secrets);
